@@ -1,0 +1,232 @@
+:root {
+  --color-primary: #191d2b;
+  --color-secondary: #e53936;
+  --color-white: #FFFFFF;
+  --color-black: #000;
+  --br-sm-2: 14px;
+  --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+  --color-bg-1: rgba(0,0,0,.1);
+}
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container.home {
+  width: 68vw;
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-box-shadow: var(--box-shadow-1);
+          box-shadow: var(--box-shadow-1);
+  padding: 1.6rem;
+}
+
+.container.home .app-header {
+  margin-top: 4rem;
+}
+
+.container.home .app-header .app-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container.home .app-header .app-title .header-icon {
+  font-size: 4rem;
+  margin-right: 1.5rem;
+}
+
+.container.home .app-header .app-title .app-name {
+  font-size: 3.5rem;
+  font-weight: 500;
+}
+
+.container.home .app-header .app-description {
+  text-align: center;
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.container.home .app-header::after {
+  content: "";
+  display: block;
+  position: relative;
+  right: 0;
+  top: -16px;
+  height: 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.container.home .app-login {
+  text-align: center;
+  padding-top: 0.6rem;
+}
+
+.container.home .app-login .login-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 90px;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--color-secondary);
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: var(--color-white);
+}
+
+.container.home .app-login .login-button i {
+  margin-right: 1.2rem;
+  font-size: 1.6rem;
+}
+
+.container.home .app-login .login-button span {
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: -2px;
+}
+
+.todo-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15vh;
+  padding: 1.2rem 1.6rem;
+  background-color: var(--color-bg-1);
+}
+
+.todo-header .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-header .title img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1.4rem;
+}
+
+.todo-header .title h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.container.todo {
+  padding-top: 4rem;
+}
+
+.container.todo .new-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.container.todo .new-todo input {
+  line-height: 2rem;
+  font-size: 1.3rem;
+}
+
+.container.todo .new-todo button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  line-height: 2rem;
+  font-size: 1.3rem;
+}
+
+.container.todo .todo-list .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.8rem 2rem;
+}
+
+.container.todo .todo-list .todo-item p {
+  line-height: 2rem;
+  font-size: 1.3rem;
+}
+
+.container.todo .todo-list .todo-item .todo-control button {
+  line-height: 2rem;
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+}
+
+.container.todo .todo-list .todo-item:hover {
+  background-color: #accec6;
+}
+
+.container.todo .todo-list .todo-item.done p {
+  text-decoration: line-through;
+}
+
+.container.todo .todo-list .todo-item.done button.btn.btn-success {
+  display: none;
+}

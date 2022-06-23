@@ -1,0 +1,36 @@
+:root {
+    --color-primary: #191d2b;
+    --color-secondary: #e53936;
+    --color-white: #FFFFFF;
+    --color-black: #000;
+    --br-sm-2: 14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+    --color-bg-1: rgba(0,0,0,.1);
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+

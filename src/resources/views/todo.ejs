@@ -1,0 +1,108 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo app</title>
+
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const todoItems = document.querySelectorAll('.todo-item');
+            console.log(todoItems);
+            todoItems.forEach(todoItem => {
+                const id = todoItem.dataset.id;
+                const doneBtn = todoItem.querySelector('.btn-success');
+                if (doneBtn) {
+                    doneBtn.addEventListener('click', (event) => {
+                        fetch('/todo', {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                            .then(response => {
+                                window.location.reload();
+                            })
+
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                    })
+                }
+                const deleteBtn = todoItem.querySelector('.btn-danger');
+
+                if (deleteBtn) {
+                    deleteBtn.addEventListener('click', (event) => {
+                        fetch('/todo', {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                            .then(response => {
+                                window.location.reload();
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                    })
+                }
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <div class="app">
+        <header class="todo-header">
+            <div class="title">
+                <img src=<%=avatar%>
+                alt="" class="avatar">
+                <!-- img generate from google account -->
+                <h2 class="list-name">
+                    <span id="username">
+                        <%=username%>
+                    </span>'s Todo
+                </h2>
+            </div>
+            <form action="logout">
+                <button type="submit" class="btn btn-danger btn-lg">Logout</button>
+            </form>
+        </header>
+        <main class="container todo">
+            <form class="new-todo" method="post" action="/todo">
+                <input type="text" name="description" class="form-control" placeholder="Enter Todo"
+                    aria-label="new-todo" aria-describedby="new-todo" required />
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+            <ul class="list-group todo-list">
+                <% todos.forEach(function(todo) { %>
+                    <li class="list-group-item todo-item <%= (todo.isCompleted == true) ? 'done' : '' %>"
+                        data-id="<%= todo._id %>">
+                        <p class="todo-description">
+                            <%= todo.description %>
+                        </p>
+                        <div class="todo-control">
+                            <button type="button" class="btn btn-success delete-todo">Done</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </div>
+                    </li>
+                    <% }); 
+                %>
+            </ul>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>
